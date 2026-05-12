@@ -1,0 +1,22 @@
+name: Environment Variables Demo
+
+on: push
+
+env:
+  MY_NAME: Vikas
+  CITY: Chennai
+
+jobs:
+  env-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print variables
+        run: |
+          echo "My name is $MY_NAME"
+          echo "I live in $CITY"
+
+      - name: Show runner info
+        run: |
+          echo "Runner OS is $RUNNER_OS"
+          echo "Workflow name is $GITHUB_WORKFLOW"
